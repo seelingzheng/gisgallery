@@ -16,7 +16,6 @@
 </template>
 
 <script>
-<<<<<<< HEAD
 import img_404 from "@/assets/404.png";
 import img_404_cloud from "@/assets/404_cloud.png";
 
@@ -28,19 +27,6 @@ export default {
       img_404_cloud
     };
   }
-=======
-import img_404 from '@/assets/404.png';
-import img_404_cloud from '@/assets/404_cloud.png';
-
-export default {
-  name: 'page404',
-  data() {
-    return {
-      img_404,
-      img_404_cloud,
-    };
-  },
->>>>>>> master
 };
 </script>
 
