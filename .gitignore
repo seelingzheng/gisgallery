@@ -1,6 +1,10 @@
 .DS_Store
 node_modules
+<<<<<<< HEAD
 
+=======
+/dist
+>>>>>>> master
 
 # local env files
 .env.local

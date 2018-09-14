@@ -1,8 +1,15 @@
 {
+<<<<<<< HEAD
   "name": "gisgallery",
   "version": "1.0.0",
   "description": "GIS项目功能展示",
   "author": "seeling2008@vip.qq.com",
+=======
+  "name": "@vue-materials/admin-lite",
+  "version": "1.0.0",
+  "description": "该模板适用于从 0 到 1 开始搭建项目，内置基础的页面，路由和菜单展示。",
+  "author": "ice-admin@alibaba-inc.com",
+>>>>>>> master
   "scripts": {
     "start": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -10,8 +17,11 @@
   },
   "dependencies": {
     "@vue-materials/basic-container": "^1.0.0",
+<<<<<<< HEAD
     "axios": "^0.18.0",
     "cesium": "^1.49.0",
+=======
+>>>>>>> master
     "echarts": "^4.1.0",
     "element-ui": "^2.3.6",
     "esri-loader": "^2.4.0",
@@ -43,7 +53,10 @@
     "eslint-plugin-vue": "^4.5.0",
     "node-sass": "^4.7.2",
     "particles.js": "^2.0.0",
+<<<<<<< HEAD
     "requirejs": "^2.3.6",
+=======
+>>>>>>> master
     "sass-loader": "^6.0.6",
     "vue-template-compiler": "^2.5.13"
   },

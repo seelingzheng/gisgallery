@@ -3,19 +3,28 @@
     <div class="user-profile-container" trigger="click">
       <div class="user-profile-content">
         <div class="menu-icons">
+<<<<<<< HEAD
           <span class="menu-icon">
             <i class="el-icon-search icon"></i>
           </span>
           <span class="menu-icon">
             <i class="el-icon-message icon"></i>
           </span>
+=======
+          <span class="menu-icon"><i class="el-icon-search icon"></i></span>
+          <span class="menu-icon"><i class="el-icon-message icon"></i></span>
+>>>>>>> master
           <span class="menu-icon">
             <el-badge is-dot class="item">
               <i class="el-icon-bell icon"></i>
             </el-badge>
           </span>
         </div>
+<<<<<<< HEAD
         <el-dropdown v-if="false">
+=======
+        <el-dropdown>
+>>>>>>> master
           <div class="user-profile-body">
             <img class="user-avatar" src="https://img.alicdn.com/tfs/TB1ONhloamWBuNjy1XaXXXCbXXa-200-200.png">
             <span class="user-name">淘小宝</span>
@@ -42,6 +51,7 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 export default {
   name: "NavBar",
   methods: {
@@ -49,13 +59,27 @@ export default {
       console.log("Logout");
     }
   }
+=======
+
+export default {
+  name: 'NavBar',
+  methods: {
+    logout() {
+      console.log('Logout');
+    },
+  },
+>>>>>>> master
 };
 </script>
 
 <style lang="scss" scoped>
 .navbar {
   height: 64px;
+<<<<<<< HEAD
   box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+=======
+  box-shadow: 0 1px 4px rgba(0,21,41,.08);
+>>>>>>> master
   .user-profile-container {
     position: absolute;
     right: 20px;
@@ -92,7 +116,11 @@ export default {
       border-radius: 4px;
     }
     .user-name {
+<<<<<<< HEAD
       color: rgba(0, 0, 0, 0.65);
+=======
+      color: rgba(0,0,0,.65);
+>>>>>>> master
     }
     .user-department {
       font-size: 12px;
