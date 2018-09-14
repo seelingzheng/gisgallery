@@ -2,15 +2,9 @@
   <scroll-bar>
     <div class="logo">
       <img src="https://img.alicdn.com/tfs/TB13UQpnYGYBuNjy0FoXXciBFXa-242-134.png" width="40">
-      <span class="site-name">ADMIN LITE</span>
+      <span class="site-name">GIS Gallery</span>
     </div>
-    <el-menu
-      mode="vertical"
-      :show-timeout="200"
-      background-color="#00142a"
-      text-color="hsla(0, 0%, 100%, .65)"
-      active-text-color="#409EFF"
-    >
+    <el-menu mode="vertical" :show-timeout="200" background-color="#00142a" text-color="hsla(0, 0%, 100%, .65)" active-text-color="#409EFF">
       <template v-for="item in asideMenuConfig">
         <router-link v-if="!item.children" :to="item.path" :key="item.name">
           <el-menu-item :index="item.path">
@@ -39,18 +33,18 @@
 </template>
 
 <script>
-import ScrollBar from './ScrollBar';
-import { asideMenuConfig } from '../../../menuConfig';
+import ScrollBar from "./ScrollBar";
+import { asideMenuConfig } from "../../../menuConfig";
 
 export default {
   components: { ScrollBar },
-  name: 'SideBar',
+  name: "SideBar",
   props: {},
   data() {
     return {
-      asideMenuConfig,
+      asideMenuConfig
     };
-  },
+  }
 };
 </script>
 
@@ -72,7 +66,7 @@ export default {
   margin-left: 10px;
 }
 .sidebar-container {
-  box-shadow: 2px 0 6px rgba(0, 21, 41, .35);
+  box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
   transition: width 0.28s;
   width: 256px !important;
   height: 100%;

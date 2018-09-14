@@ -6,15 +6,23 @@ import HeaderAsideLayout from './layouts/HeaderAsideLayout';
 import NoneLayout from './layouts/NoneLayout';
 
 import BaseMapPage from "./pages/OL/BaseMapPage";
+import {
+  BaseMapPage_LF,
+  MultiBasePage_LF,
+  AQIReport
+} from "./pages/LF";
 
-import Dashboard from './pages/Dashboard';
+import {
+  BaseC3D
+} from './pages/Cesium'
+
 
 import Login from './pages/Login';
 import HomePage from './pages/HomePage';
 import NotFound from './pages/NotFound';
 
 const routerConfig = [{
-    path: '/',
+    path: '/home',
     layout: NoneLayout,
     component: HomePage
   }, {
@@ -23,23 +31,38 @@ const routerConfig = [{
     component: Login
   },
   {
-    path: '/ol',
+    path: '/',
     layout: HeaderAsideLayout,
     component: BaseMapPage,
     children: [{
-      path: '/ol/basemap',
-      layout: HeaderAsideLayout,
-      component: BaseMapPage,
-    }]
-  },
-  {
-    path: '/dashboard',
-    layout: HeaderAsideLayout,
-    component: Dashboard,
-    children: [{
-        path: '/dashboard/analysis',
+        path: '/base/ol',
         layout: HeaderAsideLayout,
-        component: Dashboard,
+        component: BaseMapPage,
+      },
+      {
+        path: '/base/lf',
+        layout: HeaderAsideLayout,
+        component: BaseMapPage_LF,
+      }, {
+        path: '/base/lfmulti',
+        layout: HeaderAsideLayout,
+        component: MultiBasePage_LF,
+      }, {
+        path: '/base/c3d',
+        layout: HeaderAsideLayout,
+        component: BaseC3D,
+      }
+    ]
+  },
+
+  {
+    path: '/view',
+    layout: HeaderAsideLayout,
+    component: AQIReport,
+    children: [{
+        path: '/view/aqi',
+        layout: HeaderAsideLayout,
+        component: AQIReport,
       },
       {
         path: '/dashboard/monitor',

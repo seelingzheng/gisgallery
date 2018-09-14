@@ -5,22 +5,38 @@
 const headerMenuConfig = [];
 
 const asideMenuConfig = [{
-    path: '/ol',
-    name: 'Openlayers',
+    path: '/base',
+    name: '基础地图',
     icon: 'el-icon-menu',
     children: [{
-      path: '/basemap',
-      name: '基础地图',
-    }]
+        path: '/ol',
+        name: 'Openlayers',
+      },
+      // {
+      //   path: '/olmulti',
+      //   name: '多色系底图',
+      // },
+      {
+        path: '/lf',
+        name: 'Leaflet',
+      }, {
+        path: '/lfmulti',
+        name: '多色系底图LF',
+      }, {
+        path: '/c3d',
+        name: 'Cesium 3D',
+      }
+    ]
 
   },
+
   {
-    path: '/dashboard',
-    name: 'Dashboard',
+    path: '/view',
+    name: '可视化',
     icon: 'el-icon-menu',
     children: [{
-        path: '/analysis',
-        name: '分析页',
+        path: '/aqi',
+        name: '空气质量',
       },
       {
         path: '/monitor',

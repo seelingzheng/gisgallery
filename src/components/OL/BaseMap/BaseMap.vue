@@ -6,7 +6,9 @@
 import { Map, View } from "ol";
 import TileLayer from "ol/layer/Tile";
 import OSM from "ol/source/OSM";
-
+import XYZ from "ol/source/XYZ";
+import MultiTileLayer from "./../plugin/MultiTileLayer";
+import { mapconfig } from "./../../../base/config.js";
 export default {
   name: "",
 
@@ -14,17 +16,24 @@ export default {
     return {};
   },
   mounted() {
+    var xyzLayer = new XYZ({
+      url: mapconfig.baseLayer_ol
+    });
+
     var map = new Map({
       target: "map",
       layers: [
+        // new TileLayer({
+        //   source: new OSM()
+        // })
         new TileLayer({
-          source: new OSM()
+          source: xyzLayer
         })
       ],
       view: new View({
-        projection: "EPSG:4326",
-        center: [104.060928, 30.662415],
-        zoom: 12
+        projection: mapconfig.projection,
+        center: mapconfig.center,
+        zoom: mapconfig.zoom
       })
     });
   },
@@ -32,10 +41,3 @@ export default {
   methods: {}
 };
 </script>
-
-<style lang = 'scss' scoped >
-.map {
-  height: calc(100vh - 57px);
-  width: 100%;
-}
-</style>
