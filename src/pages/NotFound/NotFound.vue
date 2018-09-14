@@ -9,11 +9,7 @@
       </div>
       <div class="bullshit">
         <div class="bullshit__headline">抱歉，你访问的页面不存在</div>
-<<<<<<< HEAD
         <a href="./" class="bullshit__return-home">返回首页</a>
-=======
-        <a href="/" class="bullshit__return-home">返回首页</a>
->>>>>>> master
       </div>
     </div>
   </div>

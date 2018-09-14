@@ -6,7 +6,6 @@ import HeaderAsideLayout from './layouts/HeaderAsideLayout';
 import NoneLayout from './layouts/NoneLayout';
 
 import BaseMapPage from "./pages/OL/BaseMapPage";
-<<<<<<< HEAD
 import {
   BaseMapPage_LF,
   MultiBasePage_LF,
@@ -17,21 +16,13 @@ import {
   BaseC3D
 } from './pages/Cesium'
 
-=======
-
-import Dashboard from './pages/Dashboard';
->>>>>>> master
 
 import Login from './pages/Login';
 import HomePage from './pages/HomePage';
 import NotFound from './pages/NotFound';
 
 const routerConfig = [{
-<<<<<<< HEAD
     path: '/home',
-=======
-    path: '/',
->>>>>>> master
     layout: NoneLayout,
     component: HomePage
   }, {
@@ -40,7 +31,6 @@ const routerConfig = [{
     component: Login
   },
   {
-<<<<<<< HEAD
     path: '/',
     layout: HeaderAsideLayout,
     component: BaseMapPage,
@@ -73,25 +63,6 @@ const routerConfig = [{
         path: '/view/aqi',
         layout: HeaderAsideLayout,
         component: AQIReport,
-=======
-    path: '/ol',
-    layout: HeaderAsideLayout,
-    component: BaseMapPage,
-    children: [{
-      path: '/ol/basemap',
-      layout: HeaderAsideLayout,
-      component: BaseMapPage,
-    }]
-  },
-  {
-    path: '/dashboard',
-    layout: HeaderAsideLayout,
-    component: Dashboard,
-    children: [{
-        path: '/dashboard/analysis',
-        layout: HeaderAsideLayout,
-        component: Dashboard,
->>>>>>> master
       },
       {
         path: '/dashboard/monitor',

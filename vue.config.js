@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const webpack = require('webpack')
 const path = require('path')
@@ -43,13 +42,3 @@ module.exports = {
 
   },
 };
-=======
-module.exports = {
-  lintOnSave: false,
-  configureWebpack: {
-    resolve: {
-      extensions: ['.js', '.json', '.vue'],
-    },
-  },
-};
->>>>>>> master
