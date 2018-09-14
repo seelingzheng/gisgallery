@@ -9,18 +9,13 @@
       </div>
       <div class="bullshit">
         <div class="bullshit__headline">抱歉，你访问的页面不存在</div>
-<<<<<<< HEAD
         <a href="./" class="bullshit__return-home">返回首页</a>
-=======
-        <a href="/" class="bullshit__return-home">返回首页</a>
->>>>>>> master
       </div>
     </div>
   </div>
 </template>
 
 <script>
-<<<<<<< HEAD
 import img_404 from "@/assets/404.png";
 import img_404_cloud from "@/assets/404_cloud.png";
 
@@ -32,19 +27,6 @@ export default {
       img_404_cloud
     };
   }
-=======
-import img_404 from '@/assets/404.png';
-import img_404_cloud from '@/assets/404_cloud.png';
-
-export default {
-  name: 'page404',
-  data() {
-    return {
-      img_404,
-      img_404_cloud,
-    };
-  },
->>>>>>> master
 };
 </script>
 

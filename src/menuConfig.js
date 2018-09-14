@@ -5,7 +5,6 @@
 const headerMenuConfig = [];
 
 const asideMenuConfig = [{
-<<<<<<< HEAD
     path: '/base',
     name: '基础地图',
     icon: 'el-icon-menu',
@@ -38,24 +37,6 @@ const asideMenuConfig = [{
     children: [{
         path: '/aqi',
         name: '空气质量',
-=======
-    path: '/ol',
-    name: 'Openlayers',
-    icon: 'el-icon-menu',
-    children: [{
-      path: '/basemap',
-      name: '基础地图',
-    }]
-
-  },
-  {
-    path: '/dashboard',
-    name: 'Dashboard',
-    icon: 'el-icon-menu',
-    children: [{
-        path: '/analysis',
-        name: '分析页',
->>>>>>> master
       },
       {
         path: '/monitor',
