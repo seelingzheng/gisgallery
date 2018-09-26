@@ -13,7 +13,8 @@ import {
 } from "./pages/LF";
 
 import {
-  BaseC3D
+  BaseC3D,
+  CAqipages
 } from './pages/Cesium'
 
 
@@ -65,9 +66,9 @@ const routerConfig = [{
         component: AQIReport,
       },
       {
-        path: '/dashboard/monitor',
+        path: '/view/c3aqi',
         layout: HeaderAsideLayout,
-        component: NotFound,
+        component: CAqipages,
       },
       {
         path: '/dashboard/workplace',

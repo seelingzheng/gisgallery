@@ -51,7 +51,7 @@ export default {
       }
       return text;
     },
-    getAqiColor(aqi) {
+    getAqiColorAlpha(aqi) {
       var color = '#80808078';
       if (!isNaN(aqi)) {
         if (aqi > 0 && aqi <= 50) {
@@ -69,6 +69,44 @@ export default {
         }
       }
       return color;
+    },
+    getAqiColor(aqi) {
+      var color = 'grey';
+      if (!isNaN(aqi)) {
+        if (aqi > 0 && aqi <= 50) {
+          color = 'green';
+        } else if (aqi > 51 && aqi <= 100) {
+          color = 'yellow';
+        } else if (aqi > 101 && aqi <= 150) {
+          color = 'orange';
+        } else if (aqi > 151 && aqi <= 200) {
+          color = 'red';
+        } else if (aqi > 201 && aqi <= 300) {
+          color = 'purple';
+        } else if (aqi > 301) {
+          color = 'maroom';
+        }
+      }
+      return color;
+    },
+    getAqiLength(aqi) {
+      var l = 10000;
+      if (!isNaN(aqi)) {
+        if (aqi > 0 && aqi <= 50) {
+          l += 1000;
+        } else if (aqi > 51 && aqi <= 100) {
+          l += 2000;
+        } else if (aqi > 101 && aqi <= 150) {
+          l += 3000;
+        } else if (aqi > 151 && aqi <= 200) {
+          l += 4000;
+        } else if (aqi > 201 && aqi <= 300) {
+          l += 5000;
+        } else if (aqi > 301) {
+          l += 6000;
+        }
+      }
+      return l;
     }
 
   }
