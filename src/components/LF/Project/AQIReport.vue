@@ -38,7 +38,7 @@ export default {
         vm.hideMarkerTips();
       });
       map.on("moveend", () => {
-        if (map.getZoom() <= 9) vm.retloadAqi(map);
+        if (map.getZoom() >= 8) vm.retloadAqi(map);
       });
     });
   },
@@ -56,8 +56,8 @@ export default {
 
     getAqi(bounds) {
       var vm = this;
+      vm.layerGroup.clearLayers();
       this.http.getAqi(bounds).then(res => {
-        vm.layerGroup.clearLayers();
         vm.markers = {};
         res.data.forEach(function(data) {
           var aqi = data["aqi"] * 1;
@@ -70,7 +70,7 @@ export default {
               ? cityName.split("(")[1].replace(")", "")
               : cityName;
 
-          var color = vm.getAqiColor(aqi);
+          var color = vm.getAqiColorAlpha(aqi);
           var text = vm.getAqiText(aqi);
           var tips = cityName + " " + aqi;
           var myIcon = L.icon({
@@ -106,17 +106,18 @@ export default {
     },
     showMarkerTips(latlng) {
       var dom = this.$el; // document.getElementById("lftips");
-
-      this.$nextTick(() => {
-        var point = this.getPoint(latlng);
-        dom.style.left = point.x - 300 / 2 + "px";
-        dom.style.top = point.y - 200 * 1.5 + "px";
-        dom.style.display = "block";
-      });
+      if (dom && dom.style) {
+        this.$nextTick(() => {
+          var point = this.getPoint(latlng);
+          dom.style.left = point.x - 300 / 2 + "px";
+          dom.style.top = point.y - 200 * 1.5 + "px";
+          dom.style.display = "block";
+        });
+      }
     },
     hideMarkerTips() {
       var dom = this.$el;
-      if (dom) {
+      if (dom && dom.style) {
         dom.style.left = "-1000px";
         dom.style.top = "-1000px";
         dom.style.display = "none";

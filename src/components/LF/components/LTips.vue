@@ -1,5 +1,5 @@
 <template>
-  <div class="tips" :style="{'background-color':tipsvalue.color}" style="z-index:1010;">
+  <div class="tips" :style="{'background-color':tipsvalue&&tipsvalue.color}" style="z-index:1010;">
     <p>城市：{{tipsvalue&&tipsvalue.cityName}}</p>
     <p>AQI：{{tipsvalue&&tipsvalue.aqi}}</p>
     <p>AQI类别：{{tipsvalue&&tipsvalue.text}}</p>

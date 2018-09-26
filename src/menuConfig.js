@@ -39,8 +39,8 @@ const asideMenuConfig = [{
         name: '空气质量',
       },
       {
-        path: '/monitor',
-        name: '监控页',
+        path: '/c3aqi',
+        name: '空气质量(3D)',
       },
       {
         path: '/workplace',
