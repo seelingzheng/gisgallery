@@ -6,3 +6,7 @@ export {
   default as CAqipages
 }
 from './CAqipages.vue'
+export {
+  default as SplitLayer
+}
+from './SplitLayer.vue'

@@ -14,7 +14,8 @@ import {
 
 import {
   BaseC3D,
-  CAqipages
+  CAqipages,
+  SplitLayer
 } from './pages/Cesium'
 
 
@@ -71,9 +72,9 @@ const routerConfig = [{
         component: CAqipages,
       },
       {
-        path: '/dashboard/workplace',
+        path: '/view/split',
         layout: HeaderAsideLayout,
-        component: NotFound,
+        component: SplitLayer,
       },
     ],
   },

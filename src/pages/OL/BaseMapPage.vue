@@ -1,22 +1,32 @@
 <template>
   <div>
-    <base-map></base-map>
+    <base-layer-panel @changeLayer="changeLayer"></base-layer-panel>
+    <base-map :maptype="maptype"></base-map>
   </div>
 </template>
 
 <script>
+import { BaseLayerPanel } from "./../../components/Public/index.js";
 import BaseMap from "./../../components/OL/BaseMap";
+
 export default {
   name: "BaseMapPage",
   components: {
-    BaseMap
+    BaseMap,
+    BaseLayerPanel
   },
 
   data() {
-    return {};
+    return {
+      maptype: null
+    };
   },
 
-  methods: {}
+  methods: {
+    changeLayer(item) {
+      this.maptype = item.type;
+    }
+  }
 };
 </script>
  

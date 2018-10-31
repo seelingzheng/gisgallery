@@ -43,8 +43,8 @@ const asideMenuConfig = [{
         name: '空气质量(3D)',
       },
       {
-        path: '/workplace',
-        name: '工作台',
+        path: '/split',
+        name: 'Split',
       },
     ],
   },

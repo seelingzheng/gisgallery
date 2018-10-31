@@ -16,22 +16,32 @@ export default {
   },
   mounted() {
     var vm = this;
-    vm.getCViewer(viwer => {
-      vm.viewer = viwer;
+    vm.getCViewer(viewer => {
+      vm.viewer = viewer;
 
-      setTimeout(() => {
-        var bounds = this.getBounds();
-        var boundsStr = [
-          bounds.se[1],
-          bounds.nw[0],
-          bounds.nw[1],
-          bounds.se[0]
-        ].join(",");
-        this.getAqi(boundsStr);
-      }, 10000);
+      //   setTimeout(() => {
+      //     vm.getAqi(vm.getBoundsStr());
+      //   }, 10000);
+      //相机移动事件
+      viewer.scene.camera.moveEnd.addEventListener(function() {
+        //获取当前相机高度
+        // height = Math.ceil(earth.camera.positionCartographic.height);
+        if (vm.getBoundsStr()) vm.getAqi(vm.getBoundsStr());
+      });
     });
   },
   methods: {
+    getBoundsStr() {
+      var bounds = this.getBounds();
+      if (!bounds) return "";
+      var boundsStr = [
+        bounds.se[1],
+        bounds.nw[0],
+        bounds.nw[1],
+        bounds.se[0]
+      ].join(",");
+      return boundsStr;
+    },
     getBounds() {
       var pt1 = new Cesium.Cartesian2(0, 0);
       var pt2 = new Cesium.Cartesian2(
@@ -48,6 +58,7 @@ export default {
         this.viewer.scene
       );
 
+      if (!pick1 || !pick2) return "";
       //将三维坐标转成地理坐标
       var geoPt1 = this.viewer.scene.globe.ellipsoid.cartesianToCartographic(
         pick1
@@ -58,12 +69,12 @@ export default {
 
       //地理坐标转换为经纬度坐标
       var point1 = [
-        geoPt1.longitude / Math.PI * 180,
-        geoPt1.latitude / Math.PI * 180
+        (geoPt1.longitude / Math.PI) * 180,
+        (geoPt1.latitude / Math.PI) * 180
       ];
       var point2 = [
-        geoPt2.longitude / Math.PI * 180,
-        geoPt2.latitude / Math.PI * 180
+        (geoPt2.longitude / Math.PI) * 180,
+        (geoPt2.latitude / Math.PI) * 180
       ];
       return {
         nw: point1,
@@ -98,12 +109,13 @@ export default {
             lat: latlng[0],
             alt: 0,
             length: vm.getAqiLength(aqi),
-            color: color
+            color: color,
+            aqi: aqi
           };
           console.log(option);
-          vm.addCylinederEntity(vm.viewer, option);
+          vm.addCylinederEntityLabel(vm.viewer, option);
         });
-        vm.viewer.zoomTo(vm.viewer.entities);
+        // vm.viewer.zoomTo(vm.viewer.entities);
       });
     }
   },

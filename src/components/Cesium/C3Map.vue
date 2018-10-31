@@ -9,10 +9,11 @@ import Cesium from "cesium/Cesium";
 import { c3config } from "./../../base/config.js";
 export default {
   name: "",
-  props: ["baselayer", "annolayer"],
+  props: ["baselayer", "annolayer", "options"],
   data() {
     return {
-      viewer: null
+      viewer: null,
+      _options: null
     };
   },
   provide() {
@@ -22,6 +23,8 @@ export default {
   },
 
   mounted() {
+    this._options = this.options ? this.options : c3config;
+
     this.viewer = new Cesium.Viewer(this.$el, {
       animation: false, //动画控制不显示
 
@@ -35,7 +38,7 @@ export default {
 
       baseLayerPicker: false,
       imageryProvider: new Cesium.WebMapTileServiceImageryProvider({
-        url: this.baselayer || c3config.baseLayer,
+        url: this.baselayer || this._options.baseLayer,
         layer: "tdtVecBasicLayer",
         style: "default",
         format: "image/jpeg",
@@ -43,10 +46,10 @@ export default {
         show: false
       })
     });
-    if (this.annolayer || c3config.annoLayer)
+    if (this.annolayer || this._options.annoLayer)
       this.viewer.imageryLayers.addImageryProvider(
         new Cesium.WebMapTileServiceImageryProvider({
-          url: this.annolayer || c3config.annoLayer,
+          url: this.annolayer || this._options.annoLayer,
           layer: "tdtAnnoLayer",
           style: "default",
           format: "image/jpeg",
@@ -55,18 +58,20 @@ export default {
         })
       );
 
-    this.viewer.camera.flyTo({
-      destination: Cesium.Cartesian3.fromDegrees(
-        c3config.center[0],
-        c3config.center[1],
-        c3config.center[2]
-      ),
-      orientation: {
-        heading: Cesium.Math.toRadians(0.0),
-        pitch: Cesium.Math.toRadians(-35.0),
-        roll: 0.0
-      }
-    });
+    if (this._options.center) {
+      this.viewer.camera.flyTo({
+        destination: Cesium.Cartesian3.fromDegrees(
+          this._options.center[0],
+          this._options.center[1],
+          this._options.center[2]
+        ),
+        orientation: {
+          heading: Cesium.Math.toRadians(0.0),
+          pitch: Cesium.Math.toRadians(-35.0),
+          roll: 0.0
+        }
+      });
+    }
   },
   methods: {
     getCViewer(found) {
@@ -85,6 +90,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .cesiumContainer {
+  position: relative;
   width: 100%;
   height: calc(100vh - 72px);
   margin: 0;

@@ -6,3 +6,8 @@ export {
   default as CAqi
 }
 from './project/c_aqi.vue';
+
+export {
+  default as Splitlayer
+}
+from './project/splitlayer.vue';

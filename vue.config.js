@@ -5,6 +5,9 @@ let cesiumSource = './node_modules/cesium/Source'
 let cesiumWorkers = '../Build/Cesium/Workers'
 module.exports = {
   baseUrl: '',
+  devServer: {
+    port: 8089
+  },
   lintOnSave: false,
   configureWebpack: {
 

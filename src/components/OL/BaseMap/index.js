@@ -1,3 +1,3 @@
-import BaseMap from './BaseMap';
+import BaseMap from './OLBaseMap';
 
 export default BaseMap;
