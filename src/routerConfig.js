@@ -15,8 +15,13 @@ import {
 import {
   BaseC3D,
   CAqipages,
-  SplitLayer
+  SplitLayer,
+  Terrain
 } from './pages/Cesium'
+
+import {
+  threeEarth
+} from './pages/Three'
 
 
 import Login from './pages/Login';
@@ -76,16 +81,21 @@ const routerConfig = [{
         layout: HeaderAsideLayout,
         component: SplitLayer,
       },
+      {
+        path: '/view/terrain',
+        layout: HeaderAsideLayout,
+        component: Terrain,
+      },
     ],
   },
   {
-    path: '/table',
+    path: '/three',
     layout: HeaderAsideLayout,
-    component: NotFound,
+    component: threeEarth,
     children: [{
-        path: '/table/basic',
+        path: '/three/3earth',
         layout: HeaderAsideLayout,
-        component: NotFound,
+        component: threeEarth,
       },
       {
         path: '/table/fixed',
