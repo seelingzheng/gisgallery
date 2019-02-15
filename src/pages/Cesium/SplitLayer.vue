@@ -13,7 +13,7 @@ export default {
     return {
       options: {
         baseLayer:
-          "http://t0.tianditu.com/vec_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=vec&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles"
+          "http://wprd01.is.autonavi.com/appmaptile?lang=zh_cn&size=1&style=7&x={TileCol}&y={TileRow}&z={TileMatrix}"
         // center: [104.060928, 30.662415, 0]
       }
     };

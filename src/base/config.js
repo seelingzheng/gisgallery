@@ -6,8 +6,9 @@ export const mapconfig = {
   baseLayer_lf: 'http://wprd0{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&style=7&x={x}&y={y}&z={z}'
 }
 export const c3config = {
-  baseLayer: 'http://t0.tianditu.com/vec_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=vec&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles',
-  annoLayer: 'http://t0.tianditu.com/cva_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=cva&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles',
+  // baseLayer: 'http://t0.tianditu.com/vec_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=vec&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles',
+  baseLayer: 'http://wprd01.is.autonavi.com/appmaptile?lang=zh_cn&size=1&style=7&x={TileCol}&y={TileRow}&z={TileMatrix}',
+  // annoLayer: 'http://t0.tianditu.com/cva_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=cva&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles',
   center: [104.060928, 30.662415, 10000],
 }
 
@@ -22,16 +23,16 @@ export const baseLayers = {
     type: "baiduimage",
     name: '百度影像',
   },
-  tianditu: {
-    type: "tianditu",
-    name: '天地图',
-    projection: "EPSG:3857"
-  },
-  tiandituimage: {
-    type: "tiandituimage",
-    name: '天地图影像图',
-    projection: "EPSG:3857"
-  },
+  // tianditu: {
+  //   type: "tianditu",
+  //   name: '天地图',
+  //   projection: "EPSG:3857"
+  // },
+  // tiandituimage: {
+  //   type: "tiandituimage",
+  //   name: '天地图影像图',
+  //   projection: "EPSG:3857"
+  // },
   gaode: {
     type: "gaode",
     name: '高德地图',

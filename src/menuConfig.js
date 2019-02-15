@@ -9,6 +9,13 @@ const asideMenuConfig = [{
     name: '基础地图',
     icon: 'el-icon-menu',
     children: [{
+        path: '/lf',
+        name: 'Leaflet',
+      }, {
+        path: '/lfmulti',
+        name: '多色系底图LF',
+      },
+      {
         path: '/ol',
         name: 'Openlayers',
       },
@@ -17,12 +24,6 @@ const asideMenuConfig = [{
       //   name: '多色系底图',
       // },
       {
-        path: '/lf',
-        name: 'Leaflet',
-      }, {
-        path: '/lfmulti',
-        name: '多色系底图LF',
-      }, {
         path: '/c3d',
         name: 'Cesium 3D',
       }

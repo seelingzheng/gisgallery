@@ -15,7 +15,7 @@ export default {
       });
       //生成等高线：
       var contourUniforms = {};
-      material = Cesium.Material.fromType("ElevationContour");
+      var material = Cesium.Material.fromType("ElevationContour");
       contourUniforms = material.uniforms;
       contourUniforms.width = 1;
       contourUniforms.spacing = 500;

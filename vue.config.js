@@ -5,6 +5,7 @@ let cesiumSource = './node_modules/cesium/Source'
 let cesiumWorkers = '../Build/Cesium/Workers'
 module.exports = {
   baseUrl: '',
+  outputDir: 'docs',
   devServer: {
     port: 8089
   },

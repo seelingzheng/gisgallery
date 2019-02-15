@@ -1,7 +1,10 @@
 <template>
   <div>
     <base-layer-panel @changeLayer="changeLayer"></base-layer-panel>
-    <base-map :maptype="maptype"></base-map>
+    <base-map
+      v-if="maptype!==null"
+      :maptype="maptype"
+    ></base-map>
   </div>
 </template>
 
@@ -21,11 +24,16 @@ export default {
       maptype: null
     };
   },
-
+  mounted() {
+    this.maptype = "baidu";
+  },
   methods: {
     changeLayer(item) {
       this.maptype = item.type;
     }
+  },
+  beforeDestroy() {
+    this.maptype = null;
   }
 };
 </script>

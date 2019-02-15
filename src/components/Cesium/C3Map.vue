@@ -38,7 +38,7 @@ export default {
 
       baseLayerPicker: false,
       imageryProvider: new Cesium.WebMapTileServiceImageryProvider({
-        url: this.baselayer || this._options.baseLayer,
+        url: this.baselayer || this._options.baseLayer || c3config.baseLayer,
         layer: "tdtVecBasicLayer",
         style: "default",
         format: "image/jpeg",
@@ -59,7 +59,7 @@ export default {
       );
 
     if (this._options.center) {
-      this.viewer.camera.flyTo({
+      let _flytoOption = {
         destination: Cesium.Cartesian3.fromDegrees(
           this._options.center[0],
           this._options.center[1],
@@ -70,7 +70,8 @@ export default {
           pitch: Cesium.Math.toRadians(-35.0),
           roll: 0.0
         }
-      });
+      };
+      this.viewer.camera.flyTo(_flytoOption);
     }
   },
   methods: {

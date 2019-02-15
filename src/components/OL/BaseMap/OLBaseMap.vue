@@ -1,7 +1,10 @@
 <template>
-  <div>
-    <div id="map" class="map">
-    </div>
+
+  <div
+    id="map"
+    class="map"
+  >
+
   </div>
 </template>
 
@@ -51,7 +54,7 @@ export default {
     });
 
     this.map = new Map({
-      target: "map",
+      target: this.$el,
       layers: [
         new TileLayer({
           source: xyzLayer
@@ -63,7 +66,7 @@ export default {
         zoom: mapconfig.zoom
       })
     });
-    console.log(this.map);
+    this.setLayers(this.maptype);
   },
 
   methods: {
@@ -119,16 +122,16 @@ export default {
       } else if (type == "gaode") {
         var url =
           "http://webrd0" +
-          parseInt(Math.random() * 3) +
+          parseInt(Math.random() * 4) +
           ".is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}";
         vm.addLayer();
       } else if (type == "gaodeimage") {
         vm.addLayers([
           "http://webst0" +
-            parseInt(Math.random() * 3) +
+            parseInt(Math.random() * 4) +
             ".is.autonavi.com/appmaptile?style=6&x={x}&y={y}&z={z}",
           "http://webst0" +
-            parseInt(Math.random() * 3) +
+            parseInt(Math.random() * 4) +
             ".is.autonavi.com/appmaptile?style=8&x={x}&y={y}&z={z}"
         ]);
       } else if (type == "google") {
@@ -272,6 +275,15 @@ export default {
       });
       return baiduSourceLabel;
     }
+  },
+  beforeDestroy() {
+    this.map = null;
   }
 };
 </script>
+<style scoped>
+.map {
+  height: calc(100vh);
+}
+</style>
+
