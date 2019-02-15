@@ -11,3 +11,7 @@ export {
   default as Splitlayer
 }
 from './project/splitlayer.vue';
+export {
+  default as TerrainLayer
+}
+from './project/terrainlayer.vue';
