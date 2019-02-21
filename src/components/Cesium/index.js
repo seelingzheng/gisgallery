@@ -15,3 +15,8 @@ export {
   default as TerrainLayer
 }
 from './project/terrainlayer.vue';
+
+export {
+  default as MiniMap
+}
+from './project/minimap.vue';

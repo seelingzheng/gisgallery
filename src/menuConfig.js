@@ -51,6 +51,10 @@ const asideMenuConfig = [{
         path: '/terrain',
         name: '高程图',
       },
+      {
+        path: '/mini',
+        name: '鹰眼地图',
+      },
     ],
   },
   {

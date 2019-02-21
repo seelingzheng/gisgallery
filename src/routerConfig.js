@@ -16,7 +16,8 @@ import {
   BaseC3D,
   CAqipages,
   SplitLayer,
-  Terrain
+  Terrain,
+  MiniMap
 } from './pages/Cesium'
 
 import {
@@ -85,6 +86,11 @@ const routerConfig = [{
         path: '/view/terrain',
         layout: HeaderAsideLayout,
         component: Terrain,
+      },
+      {
+        path: '/view/mini',
+        layout: HeaderAsideLayout,
+        component: MiniMap,
       },
     ],
   },
